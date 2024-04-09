@@ -1,8 +1,36 @@
-# React + Vite
+# Tenzies Game
+  The project was made during the Scrimba React course. 
+  
+  
+I implemented some extras:
+  - The game does not start when the page renders. Starts when the user clicks on 'Roll'
+  - Timer to see your result
+  - You can see how many times you rolled the dice.
+    
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##
 
-Currently, two official plugins are available:
+Download the files and run:
+```
+npm run dev
+```
+localhost:5173
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+ used confetti as a plugin for showing animation
+ 
+ https://github.com/alampros/react-confetti#readme
+```
+  npm install react-confetti
+```
+
+
+## Pictures:
+
+![image](https://github.com/4balage4/tenzies-game/assets/115076678/8e9ffdc4-cfd5-45a4-b0e2-37373edacd5f)
+
+
+![image](https://github.com/4balage4/tenzies-game/assets/115076678/78dd34d4-863d-413a-b731-ca2735d35c12)
+
+![image](https://github.com/4balage4/tenzies-game/assets/115076678/17820325-b586-4a8a-ac24-96abde7847af)
