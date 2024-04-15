@@ -9,9 +9,7 @@ I implemented some extras:
   - The game does not start when the page renders. Starts when the user clicks on 'Roll'
   - Stopwatch to see your result
   - You can see how many times you rolled the dice.
-  - results when the game ends.
-
-
+  - compete against other players. 
 ##
 
 Download the files and run:
