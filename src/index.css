@@ -23,7 +23,9 @@ main {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
 }
 
@@ -63,6 +65,9 @@ main {
   align-items: center;
   cursor: pointer;
   background-color: #59E391;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 
@@ -164,3 +169,43 @@ table, th, td {
     border-collapse: collapse;
     padding: 0.25em;
   }
+
+
+
+
+  @media screen and (max-width:850px) {
+
+    #root {
+      padding: 0.5em;
+    }
+
+    main {
+      width: auto;
+      margin: 0 auto;
+      padding: 0.5em;
+    }
+
+
+    .container {
+      display: grid;
+      width: 100%;
+      margin: 0;
+      padding: 0 auto;
+      grid-template-columns: repeat( 6, 1fr );
+      gap: 10px;
+
+    }
+
+    .die:nth-last-child(1), .die-clicked:nth-last-child(1) {
+      grid-column: 2 / span 4;
+    }
+
+    .die, .die-clicked {
+      height: 75px;
+      width: 75px;
+      grid-column: span 2;
+      margin: 0 auto;
+
+  }
+
+}
