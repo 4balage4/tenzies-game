@@ -1,12 +1,16 @@
 # Tenzies Game
   The project was made during the Scrimba React course. 
-  
+
+Try the game on:
+https://tenzies-game-mu-three.vercel.app/
+
   
 I implemented some extras:
   - The game does not start when the page renders. Starts when the user clicks on 'Roll'
-  - Timer to see your result
+  - Stopwatch to see your result
   - You can see how many times you rolled the dice.
-    
+  - results when the game ends.
+
 
 ##
 
@@ -17,6 +21,11 @@ npm run dev
 localhost:5173
 
 
+Hosted on Vercel, connected to Firebase. 
+The app creates the results
+
+
+
 
  used confetti as a plugin for showing animation
  
@@ -24,6 +33,9 @@ localhost:5173
 ```
   npm install react-confetti
 ```
+
+
+
 
 
 ## Pictures:
