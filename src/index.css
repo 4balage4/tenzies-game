@@ -38,7 +38,7 @@ main {
 
 
 .die {
-  /* background-color: gray; */
+
   height: 50px;
   width: 50px;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
@@ -48,7 +48,9 @@ main {
   align-items: center;
   cursor: pointer;
   background-color: white;
-
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .die-clicked {
@@ -69,8 +71,12 @@ h3 {
 }
 
 
+/* BUTTON */
 
-.roll {
+.roll ,.send {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   background-color: salmon;
   color: white;
   padding: 15px 32px;
@@ -81,13 +87,39 @@ h3 {
   border: none;
 }
 
+.send {
+  margin-top: 0.25em ;
+  padding: 7.5px 16px;
+  background-color: seagreen;
+}
+
+input {
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 1.25em;
+}
+
+
+
+
+
+/* BUTTON */
+
 .roll:active {
   background-color: gray;
   color: white;
   box-shadow: inset 4px 4px 10px -4px rgba(0, 0, 0, 0.5);
 }
 
-
+.roll:disabled {
+  background-color: gray;
+  color: white;
+  box-shadow: inset 4px 4px 10px -4px rgba(0, 0, 0, 0.5);
+}
 
 
 
@@ -101,3 +133,34 @@ h1 {
   font-size: 0.75em;
   font-weight: 600;
 }
+
+
+
+
+/* Results */
+
+/* result info */
+
+.results-page {
+  margin-top: 2em;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.container-winners {
+  width: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+
+table, th, td {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.251);
+    border-collapse: collapse;
+    padding: 0.25em;
+  }
