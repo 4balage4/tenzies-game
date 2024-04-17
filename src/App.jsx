@@ -235,9 +235,9 @@ useEffect(() => {
         </div>
          <p className="counter">{draw <= 0 ? "Let's play!" :  `You rolled ${draw} times.` }</p>
             <button className="roll" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
-         <Timer timer={timer} ></Timer>
+         <Timer timer={timer} tenzies={tenzies}></Timer>
          {tenzies && <UserName handleUserName={handleChange} userName={userName} sendResults={sendResults}></UserName>}
-         {tenzies && <Results fastestResult={getFastest()} drawResult={getLeastDraw()}></Results> }
+         {tenzies && <Results fastestResult={getFastest()} drawResult={getLeastDraw()} ></Results> }
 
       </main>
     </>
