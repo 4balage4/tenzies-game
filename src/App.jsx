@@ -28,11 +28,6 @@ function App() {
   ])
 
 
-  const [topTen, setTopTen] = useState([
-
-  ])
-
-
 
 useEffect(() => {
     const reference = numbers[0].value
@@ -184,11 +179,26 @@ useEffect(() => {
       setUserName(event.target.value)
     }
 
+    function topTen() {
+      const fast = getFastest()[9].time > timer
+      const leastDraw = getLeastDraw()[9].draw > draw
+
+      if (fast) {
+        return true;
+      } else if (leastDraw) {
+        return true;
+      } else {
+        return false
+      }
+
+    }
+
 
     async function sendResults(event) {
         // const id = results[0].id
         // console.log(id)
         // const docRef = doc(db, 'ranklist', )
+
         event.target.disabled = true
         event.target.innerText = 'Results sent'
         const result =  {
@@ -197,9 +207,11 @@ useEffect(() => {
           draw: draw
           }
 
-          if (results.draw < getLeastDraw()[9].draw || results.time < getFastest()[9].time) {
-            await addDoc(playerRanking, result)
-          }
+       await addDoc(playerRanking, result)
+
+
+
+
 
       }
 
@@ -208,6 +220,8 @@ useEffect(() => {
         const fastest = results.sort((a, b) => a.time - b.time)
         return fastest.slice(0, 10)
       }
+
+
 
       function getLeastDraw() {
         const leastDraw = results.sort((a, b) => a.draw - b.draw)
@@ -236,7 +250,7 @@ useEffect(() => {
          <p className="counter">{draw <= 0 ? "Let's play!" :  `You rolled ${draw} times.` }</p>
             <button className="roll" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
          <Timer timer={timer} tenzies={tenzies}></Timer>
-         {tenzies && <UserName handleUserName={handleChange} userName={userName} sendResults={sendResults}></UserName>}
+         {tenzies && topTen() && <UserName handleUserName={handleChange} userName={userName} sendResults={sendResults} topTen={topTen}></UserName> }
          {tenzies && <Results fastestResult={getFastest()} drawResult={getLeastDraw()} ></Results> }
 
       </main>
