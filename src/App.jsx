@@ -25,6 +25,10 @@ function App() {
   const [userName, setUserName] = useState('')
 
   const [results, setResults] = useState([
+  ])
+
+
+  const [topTen, setTopTen] = useState([
 
   ])
 
@@ -49,8 +53,8 @@ useEffect(() => {
 
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(playerRanking, function(snapshot) {
 
+    const unsubscribe = onSnapshot(playerRanking, function(snapshot) {
       const resultArray = snapshot.docs.map(doc => {
         return {
           ...doc.data(),
@@ -59,6 +63,7 @@ useEffect(() => {
       })
       setResults(resultArray)
     })
+
     return unsubscribe
   }, [])
 
@@ -186,13 +191,15 @@ useEffect(() => {
         // const docRef = doc(db, 'ranklist', )
         event.target.disabled = true
         event.target.innerText = 'Results sent'
-
         const result =  {
           userName: userName ? userName : "no username",
           time: timer,
           draw: draw
           }
-      await addDoc(playerRanking, result)
+
+          if (results.draw < getLeastDraw()[9].draw || results.time < getFastest()[9].time) {
+            await addDoc(playerRanking, result)
+          }
 
       }
 
@@ -207,6 +214,11 @@ useEffect(() => {
         return leastDraw.slice(0, 10)
       }
 
+
+      // The code when I have to save it it makes too many calls to the database.
+      // Create a top ten list of the draws and time.
+      // if one of the results can make it to the list only thats when I save it.
+      // The calls will come first from the collection of the draw and time.
 
 
 
