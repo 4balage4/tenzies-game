@@ -1,5 +1,6 @@
 # Tenzies Game
   The project was made during the Scrimba React course. 
+  This project was fun to make it, because after I connected to a database and sent it to my friends, unexpected problems started to come up and after the feedback from the users I had to fix them. 
 
 Try the game on:
 https://tenzies-game-mu-three.vercel.app/
