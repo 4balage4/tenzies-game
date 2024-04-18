@@ -60,7 +60,7 @@ useEffect(() => {
     })
 
     return unsubscribe
-  }, [])
+  }, [tenzies])
 
 
 
@@ -183,7 +183,9 @@ useEffect(() => {
       const fast = getFastest()[9].time > timer
       const leastDraw = getLeastDraw()[9].draw > draw
 
-      if (fast) {
+      if (!timer) {
+        return true
+      } else if (fast) {
         return true;
       } else if (leastDraw) {
         return true;
