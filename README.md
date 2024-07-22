@@ -1,5 +1,6 @@
 # Tenzies Game
   Roll the dice and match the numbers as fast as possible!
+  
 
   The project was made during the Scrimba React course. 
   This project was fun to make it, because after I connected to a database and sent it to my friends, unexpected problems started to come up and after the feedback from the users I had to fix them. 
@@ -11,8 +12,8 @@ https://tenzies-game-mu-three.vercel.app/
 I implemented some extras:
   - The game does not start when the page renders. Starts when the user clicks on 'Roll'
   - Stopwatch to see your result
-  - You can see how many times you rolled the dice.
-  - compete against other players. 
+  - You can see how many times you rolled the dice
+  - compete against other players (protipp: on mobile is easier) 
 ##
 
 Download the files and run:
